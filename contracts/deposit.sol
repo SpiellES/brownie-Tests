@@ -77,8 +77,12 @@ contract Deposit {
         owner = newOwner;
     }
 
-    function getMember(address _member) public view returns (address, uint, uint, bool) {
-        return (members[_member].referer, members[_member].withdrawn, members[_member].deposit, members[_member].active);
+  //  function getMember(address _member) public view returns (address, uint, uint, bool) {
+     //   return (members[_member].referer, members[_member].withdrawn, members[_member].deposit, members[_member].active);
+    //}
+
+    function getReferer(address _member) public view returns (address) {
+        return (members[_member].referer);
     }
 
     function getPayments(address _member, uint indexOfPayment) public view returns (uint, uint) {
@@ -88,7 +92,6 @@ contract Deposit {
      function getWithdrawn(address _member) public view returns (uint) {
           return members[_member].withdrawn;
      }
-
 
     function getBalance() public view isOwner returns (uint256) {
         require(owner == msg.sender);
