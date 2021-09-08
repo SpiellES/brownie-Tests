@@ -34,9 +34,9 @@ contract Deposit {
             uint reward = 0;
 
             for (uint i = 0; i < members[msg.sender].payments.length; i++) {
-                uint diff = (endDate - members[msg.sender].payments[i].timestamp) / 60 / 60 / 24;
+                uint diff = (endDate - members[msg.sender].payments[i].timestamp);
 
-                if (diff >= 40) {
+                if (diff >= 4) {  //40
                     reward += (members[msg.sender].payments[i].value * 2 / 100) * diff;
                 }
             }
@@ -84,6 +84,10 @@ contract Deposit {
     function getPayments(address _member, uint indexOfPayment) public view returns (uint, uint) {
         return (members[_member].payments[indexOfPayment].value, members[_member].payments[indexOfPayment].timestamp);
     }
+
+     function getWithdrawn(address _member) public view returns (uint) {
+          return members[_member].withdrawn;
+     }
 
 
     function getBalance() public view isOwner returns (uint256) {
