@@ -1,9 +1,10 @@
 .history
+_pycache_
 .hypothesis/
 .pytest_cache
 build/
 reports/
 interfaces/
 
-/scripts/
+scripts
 
