@@ -1,7 +1,7 @@
-scripts
 .history
 .hypothesis/
+scripts/
 build/
 reports/
 interfaces/
-scripts/
+
