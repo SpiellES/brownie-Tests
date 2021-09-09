@@ -1,5 +1,5 @@
 .history
-_pycache_
+scripts/_pycache_
 .hypothesis/
 .pytest_cache
 build/
@@ -8,3 +8,4 @@ interfaces/
 
 scripts
 
+/scripts/
