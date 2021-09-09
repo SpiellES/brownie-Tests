@@ -2,6 +2,7 @@
 
 import pytest
 
+
 @pytest.fixture(scope="function", autouse=True)
 def isolate(fn_isolation):
     # выполнять откат цепи после завершения каждого теста, чтобы обеспечить надлежащую изоляцию
@@ -10,4 +11,4 @@ def isolate(fn_isolation):
 
 @pytest.fixture(scope="module")
 def deposit(Deposit, accounts):
-   return accounts[0].deploy(Deposit)
+    return accounts[0].deploy(Deposit)
