@@ -77,9 +77,9 @@ contract Deposit {
         owner = newOwner;
     }
 
-  //  function getMember(address _member) public view returns (address, uint, uint, bool) {
-     //   return (members[_member].referer, members[_member].withdrawn, members[_member].deposit, members[_member].active);
-    //}
+    function getDeposit(address _member) public view returns(uint) {
+        return members[_member].deposit;
+    }
 
     function getReferer(address _member) public view returns (address) {
         return (members[_member].referer);
